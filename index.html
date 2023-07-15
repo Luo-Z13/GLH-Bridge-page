@@ -120,7 +120,7 @@
 <head>
 	<title>This is my paper title</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:title" content="GLH-Bridge: A Large-Scale Dataset and A Cost-Saving Method for Bridge Detection in Large-Size Remote Sensing Images." />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
@@ -138,7 +138,7 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Creative and Descriptive Paper Title</span>
+		<span style="font-size:36px">GLH-Bridge: A Large-Scale Dataset and A Cost-Saving Method for Bridge Detection in Large-Size Remote Sensing Images</span>
 		<table align=center width=600px>
 			<table align=center width=600px>
 				<tr>
@@ -181,7 +181,7 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+						<img class="round" style="width:500px" src="./resources/overview.png"/>
 					</center>
 				</td>
 			</tr>
@@ -189,7 +189,7 @@
 		<table align=center width=850px>
 			<tr>
 				<td>
-					This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
+					The overview of our proposed GLH-Bridge dataset.
 				</td>
 			</tr>
 		</table>
@@ -201,17 +201,30 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				This is my abstract.
+				Bridge detection in remote sensing images (RSIs) plays a crucial role in various applications.
+				 When observed from the bird's-eye view of RSIs, bridges exhibit considerable variations in 
+				 spatial scales and aspect ratios. Therefore, to ensure the visibility and integrity of bridges,
+				  it is essential to perform bridge detection on complete large-size very-high-resolution (VHR) 
+				  RSIs. However, the current lack of large-scale datasets for bridge detection, 
+				  along with the limitations of mainstream object detection methods using the cropping strategy
+				   when processing large-size images, poses significant challenges for bridge detection
+				   in VHR RSIs. To address the lack of dataset for bridge detcetion, we propose 
+				   a large-scale dataset named GLH-Bridge, which consists of 6,000 VHR satellite images sampled 
+				   from around the world, with image sizes ranging from 2048×2048~16384×16384 pixels.
+				    And it contains 59,737 bridges spanning diverse backgrounds, each annotated with rotated bounding box. 
+					Based on the proposed GLH-Bridge, we present an efficient framework for detecting bridges in large-size RSIs called LBD-Net. 
+					We establish a benchmark on oriented bounding box (OBB) and horizontal bounding box (HBB) tasks and validate the effectiveness
+					 of the proposed LBD-Net.
 			</td>
 		</tr>
 	</table>
 	<br>
 
 	<hr>
-	<center><h1>Talk</h1></center>
+	<!-- <center><h1>Talk</h1></center>
 	<p align="center">
 		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p>
+	</p> -->
 
 	<table align=center width=800px>
 		<br>
@@ -238,7 +251,7 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
+					<td><img class="round" style="width:450px" src="./resources/Pipeline.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -247,7 +260,7 @@
 		<center>
 			<tr>
 				<td>
-					Short description if wanted
+					The overall structure of our proposed LBD-Net. It consists of the proposed DIP architecture and the SPAW strategy employed after sample allocation. The network receives original VHR large-size images as input, generates a multi-resolution pyramid using DIP, and then processes it through two parallel feature extractors, followed by feature fusion.
 				</td>
 			</tr>
 		</center>
@@ -266,7 +279,7 @@
 		<tr>
 			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
 			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
-				<b>Creative and Descriptive Paper Title.</b><br>
+				<b>GLH-Bridge: A Large-Scale Dataset and A Cost-Saving Method for Bridge Detection in Large-Size Remote Sensing Images.</b><br>
 				In Conference, 20XX.<br>
 				(hosted on <a href="">ArXiv</a>)<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
