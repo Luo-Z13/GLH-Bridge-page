@@ -181,7 +181,7 @@
 			<tr>
 				<td width=800px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/overview.png"/>
+						<img class="round" style="width:800px" src="./resources/overview.png"/>
 					</center>
 				</td>
 			</tr>
@@ -196,29 +196,31 @@
 	</center>
 
 	<hr>
-
-	<table align=center width=850px>
-		<center><h1>Abstract</h1></center>
-		<tr>
-			<td>
-				Bridge detection in remote sensing images (RSIs) plays a crucial role in various applications.
-				 When observed from the bird's-eye view of RSIs, bridges exhibit considerable variations in 
-				 spatial scales and aspect ratios. Therefore, to ensure the visibility and integrity of bridges,
-				  it is essential to perform bridge detection on complete large-size very-high-resolution (VHR) 
-				  RSIs. However, the current lack of large-scale datasets for bridge detection, 
-				  along with the limitations of mainstream object detection methods using the cropping strategy
-				   when processing large-size images, poses significant challenges for bridge detection
-				   in VHR RSIs. To address the lack of dataset for bridge detcetion, we propose 
-				   a large-scale dataset named GLH-Bridge, which consists of 6,000 VHR satellite images sampled 
-				   from around the world, with image sizes ranging from 2048×2048~16384×16384 pixels.
-				    And it contains 59,737 bridges spanning diverse backgrounds, each annotated with rotated bounding box. 
+	<div style="text-align: justify;">
+		<table align=center width=850px>
+			<center><h1>Abstract</h1></center>
+			<tr>
+				<td>
+					Bridge detection in remote sensing images (RSIs) plays a crucial role in various applications.
+					When observed from the bird's-eye view of RSIs, bridges exhibit considerable variations in 
+					spatial scales and aspect ratios. Therefore, to ensure the visibility and integrity of bridges,
+					it is essential to perform bridge detection on complete large-size very-high-resolution (VHR) 
+					RSIs. However, the current lack of large-scale datasets for bridge detection, 
+					along with the limitations of mainstream object detection methods using the cropping strategy
+					when processing large-size images, poses significant challenges for bridge detection
+					in VHR RSIs. To address the lack of dataset for bridge detcetion, we propose 
+					a large-scale dataset named GLH-Bridge, which consists of 6,000 VHR satellite images sampled 
+					from around the world, with image sizes ranging from 2048×2048~16384×16384 pixels.
+					And it contains 59,737 bridges spanning diverse backgrounds, each annotated with rotated bounding box. 
 					Based on the proposed GLH-Bridge, we present an efficient framework for detecting bridges in large-size RSIs called LBD-Net. 
 					We establish a benchmark on oriented bounding box (OBB) and horizontal bounding box (HBB) tasks and validate the effectiveness
-					 of the proposed LBD-Net.
-			</td>
-		</tr>
-	</table>
+					of the proposed LBD-Net.
+				</td>
+			</tr>
+		</table>
+    </div>
 	<br>
+
 
 	<!-- <hr> -->
 	<!-- <center><h1>Talk</h1></center>
@@ -265,13 +267,6 @@
 			</tr>
 		</center>
 	</table>
-	<table align=center width=800px>
-		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
-			</center>
-		</span>
-	</table>
 
 
 	<center><h1>Visual Result</h1></center>
@@ -297,18 +292,12 @@
 		<center>
 			<tr>
 				<td>
-					The overall structure of our proposed LBD-Net. It consists of the proposed DIP architecture and the SPAW strategy employed after sample allocation. The network receives original VHR large-size images as input, generates a multi-resolution pyramid using DIP, and then processes it through two parallel feature extractors, followed by feature fusion.
+					The visualization results of OBB and HBB tasks on the GLH-Bridge using the proposed LBD-Net and comparison object detection methods.
 				</td>
 			</tr>
 		</center>
 	</table>
-	<table align=center width=800px>
-		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
-			</center>
-		</span>
-	</table>
+
 	<!-- <br>
 	<hr>
 	<table align=center width=450px>
