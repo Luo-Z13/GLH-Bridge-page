@@ -120,7 +120,7 @@
 <head>
 	<title>This is my paper title</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="GLH-Bridge: A Large-Scale Dataset and A Cost-Saving Method for Bridge Detection in Large-Size Remote Sensing Images." />
+	<meta property="og:title" content="Learning to Holistically Detect Bridges from Large-Size VHR Remote Sensing Imagery." />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
@@ -211,20 +211,27 @@
 		<tr>
 			<td>
 				<p style="text-align: justify;">
-				Bridge detection in remote sensing images (RSIs) plays a crucial role in various applications.
-				When observed from the bird's-eye view of RSIs, bridges exhibit considerable variations in 
-				spatial scales and aspect ratios. Therefore, to ensure the visibility and integrity of bridges,
-				it is essential to perform bridge detection on complete large-size very-high-resolution (VHR) 
-				RSIs. However, the current lack of large-scale datasets for bridge detection, 
-				along with the limitations of mainstream object detection methods using the cropping strategy
-				when processing large-size images, poses significant challenges for bridge detection
-				in VHR RSIs. To address the lack of dataset for bridge detcetion, we propose 
-				a large-scale dataset named GLH-Bridge, which consists of 6,000 VHR satellite images sampled 
-				from around the world, with image sizes ranging from 2048×2048~16384×16384 pixels.
-				And it contains 59,737 bridges spanning diverse backgrounds, each annotated with rotated bounding box. 
-				Based on the proposed GLH-Bridge, we present an efficient framework for detecting bridges in large-size RSIs called LBD-Net. 
-				We establish a benchmark on oriented bounding box (OBB) and horizontal bounding box (HBB) tasks and validate the effectiveness
-				of the proposed LBD-Net.
+				Bridge detection in remote sensing images (RSIs) plays a crucial role in various applications, 
+				but it poses unique challenges compared to the detection of other objects. In RSIs, bridges exhibit 
+				considerable variations in terms of their spatial scales and aspect ratios. Therefore, to ensure the 
+				visibility and integrity of bridges, it is essential to perform holistic bridge detection in large-size 
+				very-high-resolution (VHR) RSIs. However, the lack of datasets with large-size VHR RSIs limits the deep 
+				learning algorithms' performance on bridge detection. Due to the limitation of GPU memory in tackling 
+				large-size images, deep learning-based object detection methods commonly adopt the cropping strategy, 
+				which inevitably results in label fragmentation and discontinuous prediction. To ameliorate the scarcity 
+				of datasets, this paper proposes a large-scale dataset named GLH-Bridge comprising 6,000 VHR RSIs sampled 
+				from diverse geographic locations across the globe. These images encompass a wide range of sizes, varying 
+				from 2,048*2,048 to 16,384*16,384 pixels, and collectively feature 59,737 bridges. These bridges span 
+				diverse backgrounds, and each of them has been manually annotated, using both an oriented bounding box 
+				(OBB) and a horizontal bounding box (HBB). Furthermore, we present an efficient network for holistic bridge
+				 detection (HBD-Net) in large-size RSIs. The HBD-Net presents a separate detector-based feature fusion 
+				 (SDFF) architecture and is optimized via a shape-sensitive sample re-weighting (SSRW) strategy. The SDFF 
+				 architecture performs inter-layer feature fusion (IFF) to incorporate multi-scale context in the dynamic 
+				 image pyramid (DIP) of the large-size image, and the SSRW strategy is employed to ensure an equitable 
+				 balance in the regression weight of bridges with various aspect ratios. Based on the proposed GLH-Bridge 
+				 dataset, we establish a bridge detection benchmark including the OBB and HBB tasks, and validate the 
+				 effectiveness of the proposed HBD-Net. Additionally, cross-dataset generalization experiments on two 
+				 publicly available datasets illustrate the strong generalization capability of the GLH-Bridge dataset.
 			</p>
 			</td>
 		</tr>
@@ -273,7 +280,7 @@
 		<center>
 			<tr>
 				<td>
-					The overall structure of our proposed LBD-Net. It consists of the proposed DIP architecture and the SPAW strategy employed after sample allocation. The network receives original VHR large-size images as input, generates a multi-resolution pyramid using DIP, and then processes it through two parallel feature extractors, followed by feature fusion.
+					The pipeline of the proposed HBD-Net. It contains the proposed SDFF architecture and SSRW strategy. The SDFF architecture consists of separate detectors and the IFF module. From the input large-size VHR image, we construct a DIP and send it to the separate detectors of the SDFF to obtain features. Then features from all detectors of the SDFF are fused via the IFF module to share both contextual and detailed texture information. The SSRW strategy is applied in the sample selection stage of object detectors to balance the regression weight. Finally, the output fusion features are fed into the object detectors' heads to obtain the results of each layer, which are used to compute the loss with corresponding ground-truth labels.
 				</td>
 			</tr>
 		</center>
@@ -294,7 +301,7 @@
 		<tr>
 			<td align=center width=800px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/vis1.png"/></td>
+					<td><img class="round" style="width:800px" src="./resources/vis.pdf"/></td>
 				</center>
 			</td>
 		</tr>
