@@ -1,6 +1,6 @@
-## <b>Webpage template</b>
+## https://luo-z13.github.io/GLH-Bridge-page/
 
-This webpage template was made for a [colorful ECCV paper](http://richzhang.github.io/colorization/). See how the webpage looks [here](https://richzhang.github.io/webpage-template).
+Thaks to the webpage template [colorful project](http://richzhang.github.io/colorization/). See how the webpage looks [here](https://richzhang.github.io/webpage-template).
 
 To use this template, clone the repo:
 
