@@ -1,387 +1,195 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
-
-<style type="text/css">
-	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-weight:300;
-		font-size:18px;
-		margin-left: auto;
-		margin-right: auto;
-		width: 1100px;
-	}
-	
-	h1 {
-		font-size:32px;
-		font-weight:300;
-	}
-	
-	.disclaimerbox {
-		background-color: #eee;		
-		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-		padding: 20px;
-	}
-
-	video.header-vid {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-	
-	img.header-img {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-	
-	img.rounded {
-		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-	
-	a:link,a:visited
-	{
-		color: #1367a7;
-		text-decoration: none;
-	}
-	a:hover {
-		color: #208799;
-	}
-	
-	td.dl-link {
-		height: 160px;
-		text-align: center;
-		font-size: 22px;
-	}
-	
-	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-		15px 15px 0 0px #fff, /* The fourth layer */
-		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-		20px 20px 0 0px #fff, /* The fifth layer */
-		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-		25px 25px 0 0px #fff, /* The fifth layer */
-		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-
-	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
-		margin-top: 5px;
-		margin-left: 10px;
-		margin-right: 30px;
-		margin-bottom: 5px;
-	}
-	
-	.vert-cent {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	
-	hr
-	{
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
-</style>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>GLH-Bridge</title>
-	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Learning to Holistically Detect Bridges from Large-Size VHR Remote Sensing Imagery." />
-	<meta property="og:description" content="Paper description." />
+	<meta charset="UTF-8">
+	<title>RSG</title>
+	<link type="text/css" href="/head/system.css" rel="stylesheet"/>
+	<link type="text/css" href="/head/custom.css" rel="stylesheet"/>
+	<script type="text/javascript" src="/head/custom.js"></script>
 
-	<!-- Get from Google Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src=""></script> 
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
 
-		gtag('config', 'UA-75863369-6');
-	</script>
 </head>
 
-<body>
-	<br>
-	<center>
-		<span style="font-size:28px; margin-bottom: 40px;">[TPAMI 2024] Learning to Holistically Detect Bridges from Large-Size VHR Remote Sensing Imagery</span>
-		<table align=center width=800px>
-			<table align=center width=800px style="margin-bottom: 15px; margin-top: 20px;">
-				<tr>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:20px"><a href="https://scholar.google.com.hk/citations?user=wn9hc6UAAAAJ&hl=zh-CN&oi=ao">Yansheng Li</a></span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:20px"><a href="https://github.com/Luo-Z13">Junwei Luo</a></span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:20px"><a href="http://jszy.whu.edu.cn/zhangyongjun/en/index.htm">Yongjun Zhang</a></span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:20px"><a href="http://faculty.hust.edu.cn/tanyihua/zh_CN/zdylm/2416706/list/index.htm">Yihua Tan</a></span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:20px"><a href="https://www2.scut.edu.cn/bci/2018/1005/c18566a287654/page.htm">Jin-Gang Yu</a></span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:20px"><a href="https://songbai.site/">Song Bai</a></span>
-						</center>
-					</td>
-				</tr>
-			</table>
-			<table align=center width=420px style="margin-bottom: 20px;">
-				<tr>
-					<td align=center width=160px style="margin-right: 20px;">
-						<center>
-							<span style="font-size:16px"><a href='https://ieeexplore.ieee.org/document/10509806'>[Paper]</a></span>
-						</center>
-					</td>
-					<td align=center width=160px style="margin-right: 20px;">
-						<center>
-							<span style="font-size:16px"><a href='https://pan.baidu.com/s/1tXpFukMkOGHXPsSKPRRf3w?pwd=4zgx'>[Dataset]</a></span><br>
-						</center>
-					</td>
-					<td align=center width=160px>
-						<center>
-							<span style="font-size:16px"><a href='https://linlin-dev.github.io/project/RSG.html'>[Code]</a></span><br>
-						</center>
-					</td>
-				</tr>
-			</table>
-		</table>
-	</center>
 
-	<center>
-		<table align=center width=850px>
-			<tr>
-				<td width=800px>
-					<center>
-						<img class="round" style="width:800px" src="./resources/overview.png"/>
-					</center>
-				</td>
-			</tr>
-		</table>
-		<table align=center width=850px>
-			<tr>
-				<td>
-					The overview of our proposed GLH-Bridge dataset.
-				</td>
-			</tr>
-		</table>
-	</center>
+<body marginheight="0">
+<div align="center"><h1>Learning to Holistically Detect Bridges from Large-Size VHR Remote Sensing Imagery<br></h1></div>
 
-	<ul>
-		GLH-Bridge dataset has six remarkable and important characteristics:	
-		<li> Various bridge scales.<br></li>
-		<li> Extreme bridge aspect ratios.<br></li>
-		<li> Large image sizes and very-high-resolution.<br></li>
-		<li> Extensive geographical coverage.<br></li>
-		<li> Diverse bridge backgrounds.<br></li>
-		<li> Variation in instance density.<br></li>
+
+<table align=center width=800px>
+	<table align=center width=800px style="margin-bottom: 15px; margin-top: 20px;">
+		<tr>
+			<td align=center width=150px>
+				<center>
+					<span style="font-size:20px"><a href="https://scholar.google.com.hk/citations?user=wn9hc6UAAAAJ&hl=zh-CN&oi=ao">Yansheng Li</a></span>
+				</center>
+			</td>
+			<td align=center width=150px>
+				<center>
+					<span style="font-size:20px"><a href="https://github.com/Luo-Z13">Junwei Luo</a></span>
+				</center>
+			</td>
+			<td align=center width=150px>
+				<center>
+					<span style="font-size:20px"><a href="http://jszy.whu.edu.cn/zhangyongjun/en/index.htm">Yongjun Zhang</a></span>
+				</center>
+			</td>
+			<td align=center width=150px>
+				<center>
+					<span style="font-size:20px"><a href="http://faculty.hust.edu.cn/tanyihua/zh_CN/zdylm/2416706/list/index.htm">Yihua Tan</a></span>
+				</center>
+			</td>
+			<td align=center width=150px>
+				<center>
+					<span style="font-size:20px"><a href="https://www2.scut.edu.cn/bci/2018/1005/c18566a287654/page.htm">Jin-Gang Yu</a></span>
+				</center>
+			</td>
+			<td align=center width=150px>
+				<center>
+					<span style="font-size:20px"><a href="https://songbai.site/">Song Bai</a></span>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	
+<h4 align="center"> <a href="https://ieeexplore.ieee.org/document/10509806"><img src="https://img.shields.io/badge/TPAMI-2024-blue"></a> </h4>
+
+<p style="text-align: center">
+	<a href="#introduction" style="color: #2b5068;">Introduction</a> |
+	<a href="#GLH-bridge-Dataset" style="color: #2b5068;">GLH-Bridge Dataset</a> |
+	<a href="#benchmark" style="color: #2b5068;">Benchmark</a> |
+	<a href="#generalization-experiments-on-GLH-bridge" style="color: #2b5068;">Generalization experiments</a> |
+	<a href="#citation" style="color: #2b5068;">Citation</a> |
+	<a href="#contact" style="color: #2b5068;">Contact</a>
+</p>
+
+<h3>GLH-Bridge Dataset</h3>
+<p>To ameliorate the scarcity of bridge datasets, we proposes a large-scale dataset named GLH-Bridge comprising 
+	6,000 very-high-resolution (VHR) remote sensing images (RSIs) sampled from diverse geographic locations 
+	across the globe. These images encompass a wide range of sizes, varying from 2,048*2,048 to 16,384*16,384 pixels, 
+	and collectively feature 59,737 bridges. These bridges span diverse backgrounds like vegetation, dry riverbeds, 
+	and roads. Each of them has been manually annotated using both an oriented bounding box (OBB) and a horizontal 
+	bounding box (HBB).	<br>
+
+
+	<img src="/resources/Pipeline.png" width="800px">    
+
+<h2 id="introduction">Introduction</h2>
+<p>Bridges represent critical infrastructure components, serving as fundamental transportation facilities that traverse various landscapes. They hold substantial significance in the domains like civil transportation and disaster relief efforts. To ensure the visibility and integrity of bridges, it is essential to perform <b>holistic bridge detection in large-size very-high-resolution (VHR) remote sensing images (RSIs)</b>. However, large-scale datasets and methods suitable for holistic bridge detection in large-sisze RSIs have yet to be explored. To ameliorate the scarcity of bridge datasets, we proposes a large-scale dataset named <b>GLH-Bridge</b> comprising 6,000 VHR RSIs sampled from diverse geographic locations across the globe. These images encompass a wide range of sizes, varying from 2,048 x 2,048 to 16,384 x 16,384 pixels, and collectively feature 59,737 bridges. Moreover, we establish a large-scale benchmark including the OBB and HBB bridge detection tasks and propose the <b></b>HBD-Net</b> for holistical bridge detection. Finally, cross-dataset generalization experiments on two publicly available datasets illustrate the strong generalization capability of the GLH-Bridge dataset.
+
+
+<h2 id="GLH-bridge-Dataset">GLH-Bridge Dataset</h2>
+<p>To fill the lack of pertinent datasets and enhance the generalizability of segmentation models in detecting global surface water, we first present the GLH-water dataset that contains <b>250 VHR (GSD=0.3m) satellite images</b> with the size
+	of <b>12,800 × 12,800</b> pixels. These images are collected from various locations worldwide and manual annotations are included.</p>
+
+To fill the lack of pertinent bridge datasets, we proposes a large-scale dataset named GLH-Bridge comprising 6,000 VHR RSIs sampled from diverse geographic locations across the globe, with the image sizes vary from <b>2,048 × 2,048 pixels to 16,384 × 16,384 pixels</b>. Within GLH-Bridge, 59,737 bridges span diverse backgrounds like vegetation, dry riverbeds, and roads. Each of them has been manually annotated using both an oriented bounding box (OBB) and a horizontal bounding box (HBB).
+	
+<p>GLH-water dataset has five remarkable and important advantages:</p>
+	<ul id="advantages">
+		<li><b>Various bridge scales.</b></li>
+		<li><b>Extreme bridge aspect ratios.</b></li>
+		<li><b>Large image sizes and very-high-resolution.</b></li>
+		<li><b>Extensive geographical coverage.</b></li>
+		<li><b>Variation in instance density.</b></li>
 	</ul>
-	  
-	<hr>
-	<table align=center width=850px>
-		<center><h1>Introduction</h1></center>
-		<tr>
-			<td>
-				<p style="text-align: justify;">
-				Bridge detection in remote sensing images (RSIs) plays a crucial role in various applications, 
-				but it poses unique challenges compared to the detection of other objects. In RSIs, bridges exhibit 
-				considerable variations in terms of their spatial scales and aspect ratios. Therefore, to ensure the 
-				visibility and integrity of bridges, it is essential to perform holistic bridge detection in large-size 
-				very-high-resolution (VHR) RSIs. However, the lack of datasets with large-size VHR RSIs limits the deep 
-				learning algorithms' performance on bridge detection. Due to the limitation of GPU memory in tackling 
-				large-size images, deep learning-based object detection methods commonly adopt the cropping strategy, 
-				which inevitably results in label fragmentation and discontinuous prediction. To ameliorate the scarcity 
-				of datasets, this paper proposes a large-scale dataset named GLH-Bridge comprising 6,000 VHR RSIs sampled 
-				from diverse geographic locations across the globe. These images encompass a wide range of sizes, varying 
-				from 2,048*2,048 to 16,384*16,384 pixels, and collectively feature 59,737 bridges. These bridges span 
-				diverse backgrounds, and each of them has been manually annotated, using both an oriented bounding box 
-				(OBB) and a horizontal bounding box (HBB). Furthermore, we present an efficient network for holistic bridge
-				 detection (HBD-Net) in large-size RSIs. The HBD-Net presents a separate detector-based feature fusion 
-				 (SDFF) architecture and is optimized via a shape-sensitive sample re-weighting (SSRW) strategy. The SDFF 
-				 architecture performs inter-layer feature fusion (IFF) to incorporate multi-scale context in the dynamic 
-				 image pyramid (DIP) of the large-size image, and the SSRW strategy is employed to ensure an equitable 
-				 balance in the regression weight of bridges with various aspect ratios. Based on the proposed GLH-Bridge 
-				 dataset, we establish a bridge detection benchmark including the OBB and HBB tasks, and validate the 
-				 effectiveness of the proposed HBD-Net. Additionally, cross-dataset generalization experiments on two 
-				 publicly available datasets illustrate the strong generalization capability of the GLH-Bridge dataset.
-			</p>
-			</td>
-		</tr>
-	</table>
-    
-	<br>
+	
 
+<div style="border: 9px solid #FFFFFF"></div>
+<div id = "tab1" class = "tabMenu">
+	<ul>
+	<li class="on"><h4>Geographical Distribution</h4></li>
+		<li class="off"><h4>Download Links</h4></li>
+		</ul>
+	<div id="firstPage" class="show">
+	<img src="/resources/overview.png" width="800px">
+		<div id="thirdPage" class = "hide">
 
-	<!-- <hr> -->
-	<!-- <center><h1>Talk</h1></center>
-	<p align="center">
-		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p> -->
+	<li style="margin-top: 5px" class = "dot"><span class = "lin">Baidu Drive: <a href="https://pan.baidu.com/s/1tXpFukMkOGHXPsSKPRRf3w?pwd=4zgx"><b>Link</b></a> </span></li>
+	<li style="margin-top: 5px" class = "dot"><span class = "lin">Hugging Face: <a href="https://huggingface.co/datasets/ll-13/GLH-Bridge"><b>Link</b></a> </span></li>
+		
+	</div>
+</div>
+<div style="border: 9px solid #FFFFFF"></div>
+		
+<h2 id="benchmark">Benchmark</h2>
+<p>Based on MMRotate and MMDetection, we conduct a comparative evaluation covering 18 advanced object detection methods in the GLH-Bridge dataset. Considering the characteristics of bridges, unlike the classic method of dividing labels based on area, we divide the labels based on length into <b>short, middle, large, and huge</b>, corresponding to pixel lengths of {(0,50], (50,200], (200,800], (800,16384]}. Our proposed HBD-Net achieves effective performance on the benchmark, particularly in the detection of huge bridges.</p>
 
-	<!-- <table align=center width=800px>
-		<br>
-		<tr>
-			<center>
-				<span style="font-size:28px"><a href=''>[Slides]</a>
-				</span>
-			</center>
-		</tr>
-	</table>
-	<hr> -->
+	
+<div style="border: 9px solid #FFFFFF"></div>
+<div id = "tab2" class = "tabMenu">
+	<ul>
+	<li class="on"><h4>Baseline Methods</h4></li>
+		<li class="off"><h4>HBD-Net</h4></li>
+		<li class="off"><h4>Benchmark Results</h4></li>
+		</ul>
+	<div id="firstPage" class="show">
+	<p>
+		<li><b>Oriented Object Detection:</b> Rotated Faster R-CNN, RoI-Transformer, Rotated FCOS, Rotated RetinaNet, R3Det, KLD(R3Det), ReDet, Oriented R-CNN, Oriented RepPoints.</li>
+		<li><b>Horizontal Object Detection:</b> Faster R-CNN, RetinaNet, FCOS, TOOD, Cascade R-CNN, ATSS, GuidingANchor.</li>
+		<li><b>Large-size Image Object Detection:</b> CGL(Rotated Faster R-CNN), GLSAN(Faster R-CNN), SAHI(Faster R-CNN), CGL(Faster R-CNN).</li>
+	</p>
+	</div>
+		<div id="secondPage" class= "hide">
+	<!-- <p>We develop a competitive strong baseline with the new
+		<b>pyramid consistency loss (PCL) </b>that is specifically designed to explore the detection
+		performance of surface water bodies in large-size VHR
+		satellite images. The pyramid consistency encompasses
+		the <b>intra-layer consistency</b> (i.e., visual field consistency
+		between pyramidal layers) and the <b>inter-layer consistency</b>
+		(i.e., spatial consistency within a pyramidal layer).</p> -->
+	<img src="/resources/Pipeline.png" width="800px">
+		</div>
+		<div id="thirdPage" class = "hide">
+			<img src="/resources/benchmark.png" width="800px">
+		</div>
+</div>
+<div style="border: 9px solid #FFFFFF"></div>
 
-	<center><h1>Method</h1></center>
+<h2 id="generalization-experiments-on-GLH-water">Generalization experiments on GLH-water</h2>
 
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=800px>
-				<center>
-					<td><img class="round" style="width:800px" src="./resources/Pipeline.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					The pipeline of the proposed HBD-Net. It contains the proposed SDFF architecture and SSRW strategy. The SDFF architecture consists of separate detectors and the IFF module. From the input large-size VHR image, we construct a DIP and send it to the separate detectors of the SDFF to obtain features. Then features from all detectors of the SDFF are fused via the IFF module to share both contextual and detailed texture information. The SSRW strategy is applied in the sample selection stage of object detectors to balance the regression weight. Finally, the output fusion features are fed into the object detectors' heads to obtain the results of each layer, which are used to compute the loss with corresponding ground-truth labels.
-				</td>
-			</tr>
-		</center>
-	</table>
+<div style="border: 9px solid #FFFFFF"></div>
+<div id = "tab3" class = "tabMenu">
+	<ul>
+	<li class="on"><h4>Cross-dataset evaluation</h4></li>
+	<li class="off"><h4>DIOR-R evaluation</h4></li>
+	<li class="off"><h4>DOTA evaluation</h4></li>
+		</ul>
+	<div id="firstPage" class="show">
+		<img src="/resources/general.png" width="800px">
+	</div>
+		<div id="secondPage" class= "hide">
+			<img src="/resources/DIOR.png" width="800px">
+		</div>
+		<div id="thirdPage" class= "hide">
+			<img src="/resources/DOTA.png" width="800px">
+		</div>
+<div style="border: 9px solid #FFFFFF"></div>
 
+<h2 id="citation">Citation</h2>
+<pre>
+@article{li2024learning,
+	title={Learning to Holistically Detect Bridges From Large-Size VHR Remote Sensing Imagery},
+	author={Li, Yansheng and Luo, Junwei and Zhang, Yongjun and Tan, Yihua and Yu, Jin-Gang and Bai, Song},
+	journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	volume={44},
+	number={11},
+	pages={7778--7796},
+	year={2024},
+	publisher={IEEE}}
+</pre>
+	
+<h2 id="contact">Contact</h2>
+<p>If you have any problems or feedback with the project, please contact: luojunwei@whu.edu.cn</p>
 
-	<center><h1>Visual Result</h1></center>
-
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=800px>
-				<center>
-					<td><img class="round" style="width:800px" src="./resources/vis.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					The visualization results of OBB and HBB tasks on the GLH-Bridge using the proposed LBD-Net and comparison object detection methods.
-				</td>
-			</tr>
-		</center>
-	</table>
-
-	<!-- <br>
-	<hr>
-	<table align=center width=450px>
-		<center><h1>Paper and Supplementary Material</h1></center>
-		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
-			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
-				<b>GLH-Bridge: A Large-Scale Dataset and A Cost-Saving Method for Bridge Detection in Large-Size Remote Sensing Images.</b><br>
-				In Conference, 20XX.<br>
-				(hosted on <a href="">ArXiv</a>)<br> -->
-				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
-				<!-- <span style="font-size:4pt"><a href=""><br></a> -->
-				<!-- </span> -->
-			<!-- </td> -->
-		<!-- </tr> -->
-	<!-- </table> -->
-	<!-- <br> -->
-
-	<!-- <table align=center width=600px>
-		<tr>
-			<td><span style="font-size:14pt"><center>
-				<a href="./resources/bibtex.txt">[Bibtex]</a>
-			</center></td>
-		</tr>
-	</table> -->
-
-	<hr>
-	<!-- <br>
-
-	<table align=center width=900px>
-		<tr>
-			<td width=400px>
-				<left>
-					<center><h4>Acknowledgements</h4></center>
-					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
-				</left>
-			</td>
-		</tr>
-	</table>
-
-<br> -->
-    <center>
-        <div class="center">
-            <a href="https://info.flagcounter.com/P6vl"><img class="flag-counter" src="https://s11.flagcounter.com/countxl/P6vl/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_32/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter"></a>
-        </div>
-    </center>
-</body>
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5govsohxwgi&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+<div style="text-align: center;"><a href="http://s11.flagcounter.com/more/ib3g"><img src="https://s11.flagcounter.com/count2/ib3g/bg_FFFFFF/txt_000000/border_CCCCCC/columns_6/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></div>
+<div style="border:40px solid #FFFFFF"></div>
+<!-- </body>
 </html>
 
+	
+<div style="border:40px solid #FFFFFF"></div> -->
+
+<a href="https://info.flagcounter.com/LqCH"><img src="https://s01.flagcounter.com/count2/LqCH/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_16/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+</body>
+</html>
