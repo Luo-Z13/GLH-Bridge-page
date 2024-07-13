@@ -13,7 +13,7 @@
 [![Evaluation](https://img.shields.io/badge/Competition-Page-31CEEB)](https://www.codabench.org/competitions/3371)
 
 ## 📢 News and Updates
-- **2024.07.13**: The evaluation system is now open. Welcome to evaluate your bridge detection model on the [GLH-Bridge Bench](https://www.codabench.org/competitions/3371/) !!!
+- **2024.07.13**: The evaluation system is now open. Welcome to evaluate your model at the [GLH-Bridge Bench](https://www.codabench.org/competitions/3371/) !!!
 
 
 <!-- 
