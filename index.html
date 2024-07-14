@@ -64,7 +64,6 @@
 
 
 <h2 id="introduction">Introduction</h2>
-<span style="color:#FF0000; font-weight:bold;"> The <a href="https://www.codabench.org/competitions/3371/" style="color: #FFA500; text-decoration: underline;"><b>evaluation system</b></a> is now open. Welcome to evaluate your model in the test set of GLH-Bridge!!!</span>
 <p>Bridges represent critical infrastructure components, serving as fundamental transportation facilities that traverse various landscapes. They hold substantial significance in the domains like civil transportation and disaster relief efforts. To ensure the visibility and integrity of bridges, it is essential to perform <b>holistic bridge detection in large-size very-high-resolution (VHR) remote sensing images (RSIs)</b>. However, large-scale datasets and methods suitable for holistic bridge detection in large-sisze RSIs have yet to be explored. To ameliorate the scarcity of bridge datasets, we propose a large-scale dataset named <b>GLH-Bridge</b> comprising 6,000 VHR RSIs sampled from diverse geographic locations across the globe. These images encompass a wide range of sizes, varying from 2,048 x 2,048 to 16,384 x 16,384 pixels, and collectively feature 59,737 bridges. Moreover, we establish a large-scale benchmark including the OBB and HBB bridge detection tasks and propose the <b></b>HBD-Net</b> for holistic bridge detection. Finally, cross-dataset generalization experiments on two publicly available datasets illustrate the strong generalization capability of the GLH-Bridge dataset.
 
 
@@ -92,16 +91,18 @@
 		<img src="resources/overview.png" style="width:100%;">
      </div>
 		<div id="secondPage" class = "show">
-	<li style="margin-top: 5px" class = "dot"><span class = "lin">Baidu Drive: <a href="https://pan.baidu.com/s/1tXpFukMkOGHXPsSKPRRf3w?pwd=4zgx"><b>Link</b></a> </span></li>
-	<li style="margin-top: 5px" class = "dot"><span class = "lin">Hugging Face: <a href="https://huggingface.co/datasets/ll-13/GLH-Bridge"><b>Link</b></a> </span></li>
-	<li style="margin-top: 5px" class = "dot"><span class = "lin">Code: <a href="https://linlin-dev.github.io/project/STAR"><b>Link</b></a> </span></li>
+	<li style="margin-top: 5px" class = "dot"><span class = "lin">Baidu Drive: <a href="https://pan.baidu.com/s/1tXpFukMkOGHXPsSKPRRf3w?pwd=4zgx" style="color: hsl(242, 65%, 56%); text-decoration: underline;"><b>Link</b></a> </span></li>
+	<li style="margin-top: 5px" class = "dot"><span class = "lin">Hugging Face: <a href="https://huggingface.co/datasets/ll-13/GLH-Bridge" style="color: hsl(242, 65%, 56%); text-decoration: underline;"><b>Link</b></a> </span></li>
+	<li style="margin-top: 5px" class = "dot"><span class = "lin">Evaluation: <a href="https://www.codabench.org/competitions/3371/" style="color: hsl(242, 65%, 56%); text-decoration: underline;"><b>Codabench Evaluation</b></a> </span></li>
+	<li style="margin-top: 5px" class = "dot"><span class = "lin">Code: (coming soon) </span></li>
+
 	
 </div>
 </div>
 <div style="border: 9px solid #FFFFFF"></div>
 		
 <h2 id="benchmark">Benchmark</h2>
-<p><span style="color:#FF0000; font-weight:bold;">The evaluation system is now open. Welcome to evaluate your model on the <a href="https://www.codabench.org/competitions/3371/" style="color: #FFA500; text-decoration: underline;"><b>GLH-Bridge Bench</b></a>!</p><p>Based on MMRotate and MMDetection, we conduct a comparative evaluation covering 18 advanced object detection methods in the GLH-Bridge dataset. Considering the characteristics of bridges, unlike the classic method of dividing labels based on area, we divide the labels based on length into <b>short, middle, large, and huge</b>, corresponding to pixel lengths of {(0,50], (50,200], (200,800], (800,16384]}. Our proposed HBD-Net achieves effective performance on the benchmark, particularly in the detection of huge bridges.</p>
+<p>Based on MMRotate and MMDetection, we conduct a comparative evaluation covering 18 advanced object detection methods in the GLH-Bridge dataset. Considering the characteristics of bridges, unlike the classic method of dividing labels based on area, we divide the labels based on length into <b>short, middle, large, and huge</b>, corresponding to pixel lengths of {(0,50], (50,200], (200,800], (800,16384]}. Our proposed HBD-Net achieves effective performance on the benchmark, particularly in the detection of huge bridges. The code of benchmark can be found in <a href="https://github.com/yangxue0827/STAR-MMRotate" style="color: hsl(244, 57%, 61%); text-decoration: underline;"><b>STAR MMRotate</b></a>.</p>
 	
 	
 <div style="border: 9px solid #FFFFFF"></div>
@@ -148,16 +149,23 @@
 <div style="border: 9px solid #FFFFFF"></div>
 
 <h2 id="citation">Citation</h2>
+<p>If you find this work helpful for your research, please consider citing our paper:</p>
 <pre>
 @article{li2024learning,
-	title={Learning to Holistically Detect Bridges From Large-Size VHR Remote Sensing Imagery},
-	author={Li, Yansheng and Luo, Junwei and Zhang, Yongjun and Tan, Yihua and Yu, Jin-Gang and Bai, Song},
-	journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-	volume={44},
-	number={11},
-	pages={7778--7796},
-	year={2024},
-	publisher={IEEE}}
+    title={Learning to Holistically Detect Bridges From Large-Size VHR Remote Sensing Imagery},
+    author={Li, Yansheng and Luo, Junwei and Zhang, Yongjun and Tan, Yihua and Yu, Jin-Gang and Bai, Song},
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    volume={44},
+    number={11},
+    pages={7778--7796},
+    year={2024},
+    publisher={IEEE}}
+
+@article{li2024scene,
+	title={STAR: A First-Ever Dataset and A Large-Scale Benchmark for Scene Graph Generation in Large-Size Satellite Imagery},
+	author={Li, Yansheng and Wang, Linlin and Wang, Tingzhu and Yang, Xue and Luo, Junwei and Wang, Qi and Deng, Youming and Wang, Wenbin and Sun, Xian and Li, Haifeng and Dang, Bo and Zhang, Yongjun and Yu, Yi and Yan Junchi},
+	journal={arXiv preprint arXiv:2406.09410},
+	year={2024}}
 </pre>
 	
 <h2 id="contact">Contact</h2>
